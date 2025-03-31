@@ -1,0 +1,29 @@
+/* Custom styles for the Study Platform */
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-image {
+    width: auto;
+    height: auto;
+    max-height: 130px;
+    object-fit: contain;
+}
+
+/* Dashboard-specific logo */
+.dashboard-logo {
+    width: auto;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Fix for blank page flicker */
+#app {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
