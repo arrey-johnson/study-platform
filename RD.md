@@ -1,97 +1,154 @@
-Study Platform for Bao Technologies and
-Travels
-Requirements Document
-1. Introduction
-1.1 Purpose
-This document defines the requirements for a self-study platform by Bao Technologies and
-Travels. The platform will provide student and admin dashboards to facilitate structured learning,
-close student follow-up, and interactive communication.
-Admins will be able to create courses, assign students, track their progress in detail, review
-submissions, and communicate effectively. Students will have access to assigned courses,
-complete exercises, receive feedback, and interact with admins.
-1.2 Scope
-The platform will be a web-based application built with PHP for the backend and MySQL for the
-database. The two main user roles are:
-● Admins: Manage courses, students, assignments, progress tracking, and
-communication.
-● Students: Access assigned courses, complete exercises, track progress, and receive
-feedback.
-2. System Features
-2.1 Admin Dashboard
-Authentication & Authorization
-Secure login/logout functionality.
-Role-based access control for admins.
-Course Management
-Create, edit, and delete courses.
-Organize courses into modules and chapters.
-Add practice exercises and assignments.
-Set deadlines for exercises and assignments.
-Student Management
-Register new students and assign them to courses.
-Remove or update student assignments.
-Monitor student engagement and inactivity.
-Progress Tracking & Reporting
-Live progress updates per student.
-Track completion of modules, chapters, exercises, and time spent on materials.
-Generate reports on student engagement, strengths, and weaknesses.
-Identify students who are inactive or struggling.
-Exercise & Submission Management
-Support auto-graded exercises (e.g., multiple choice, true/false).
-Allow students to upload files for assignments.
-Enable manual review and feedback for written responses.
-Set grading criteria and deadlines for exercises.
-Messaging & Follow-up System
-Real-time chat and discussion boards for students and admins.
-Enable admins to send personalized reminders to inactive students.
-Automated email/SMS notifications for new assignments, deadlines, and feedback.
-Allow admins to schedule one-on-one check-ins with students.
-2.2 Student Dashboard
-Authentication
-Secure login/logout functionality.
-Password recovery/reset via email.
-Course Access
-View assigned courses, modules, and chapters.
-Access study materials in different formats (PDF, video, quizzes).
-Practice & Progress Tracking
-Complete and submit exercises.
-Receive instant feedback on auto-graded exercises.
-Track progress and performance trends.
-Receive reminders for pending or overdue exercises.
-Messaging & Support
-Chat with assigned instructors (admins).
-Receive feedback on assignments and exercises.
-Participate in discussion forums related to each course.
-3. System Architecture
-3.1 Tech Stack
-Frontend: HTML, CSS, JavaScript (VanillaJS or Vue.js for interactivity)
-Backend: PHP (Laravel or Core PHP)
-Database: MySQL
-Authentication: PHP sessions & JWT (if using APIs)
-Hosting: Apache/Nginx on a VPS or shared hosting
-4. Functional Requirements
-4.1 User Authentication
-Secure login for students and admins.
-Password reset via email.
-Session management for active users.
-4.2 Course and Content Management
-Admins can create, update, and assign courses.
-Students can view only assigned courses.
-4.3 Student Progress Tracking
-System records module/chapter completion.
-Admins can track time spent per lesson.
-Reports highlight student strengths/weaknesses.
-Automatic reminders for inactive students.
-4.4 Exercise & Submission Workflow
-Auto-grading for quizzes.
-File uploads for written exercises.
-Admins can review and grade manually.
-Students can resubmit exercises after feedback.
-4.5 Messaging & Notifications
-In-app messaging for student-admin communication.
-Discussion boards for student collaboration.
-Automatic alerts for new assignments, deadlines, and responses.
-5. Non-Functional Requirements
-Security: Secure authentication, encrypted passwords.
-Scalability: The system should handle multiple users simultaneously.
-Performance: Fast database queries, optimized backend operations.
-Usability: Mobile-friendly design, intuitive UI
+Sure! Below is a **comprehensive requirement document** for the **Bao Technologies and Travels Study Platform**, clearly separating **Functional** and **Non-Functional** requirements.
+
+---
+
+# 📄 **Requirements Document for Bao Technologies and Travels Study Platform**
+
+## 1. Introduction
+
+### 1.1 Purpose  
+The purpose of this document is to define the requirements for the development of a web-based **self-study platform** for Bao Technologies and Travels using **Core PHP** and **MySQL**. This platform will allow **admins** to manage courses and students, and **students** to engage in structured, self-paced learning while tracking their academic progress.
+
+### 1.2 Intended Audience  
+- Project Manager  
+- Software Developers  
+- Web Designers  
+- QA/Testers  
+- Stakeholders of Bao Technologies and Travels
+
+### 1.3 Scope  
+The platform will feature two user roles:  
+- **Admin**: Manages courses, assignments, students, progress reports, messaging, and feedback.  
+- **Student**: Accesses assigned courses, studies course content, completes exercises, communicates with admins, and tracks personal progress.
+
+---
+
+## 2. System Overview
+
+The system will be implemented as a responsive web application using:
+- **Frontend**: HTML, CSS, JavaScript (VanillaJS)
+- **Backend**: Core PHP
+- **Database**: MySQL
+- **Hosting**: Apache/Nginx (Shared Hosting or VPS)
+
+---
+
+## 3. Functional Requirements
+
+### 3.1 User Authentication & Authorization
+- Secure login/logout for admins and students
+- Password encryption using `password_hash()`
+- Password recovery via email
+- Session management with role-based access (admin/student)
+
+### 3.2 Admin Features
+
+#### 3.2.1 Dashboard
+- Overview of student activities, course stats, recent messages, and pending assignments
+
+#### 3.2.2 Course Management
+- Create, update, delete courses
+- Organize content into modules and chapters
+- Upload study resources (PDF, video, text)
+- Set deadlines for assignments
+
+#### 3.2.3 Exercise & Assignment Management
+- Add auto-graded exercises (e.g., MCQs)
+- Add manual grading assignments (file upload or text input)
+- Set grading rubrics and deadlines
+- Track and review student submissions
+
+#### 3.2.4 Student Management
+- Register students and assign to courses
+- Edit student information
+- Monitor course engagement
+- Identify inactive students
+
+#### 3.2.5 Progress Tracking & Reporting
+- View completion percentage by course/module/chapter
+- Track time spent per student per chapter
+- Generate student performance reports
+- Highlight strengths and weaknesses
+
+#### 3.2.6 Messaging & Notifications
+- Real-time messaging with students
+- Send broadcast messages or individual reminders
+- Schedule 1-on-1 check-ins
+- Set up email alerts for deadlines and feedback
+
+---
+
+### 3.3 Student Features
+
+#### 3.3.1 Dashboard
+- Summary of enrolled courses, pending exercises, feedback, and progress chart
+
+#### 3.3.2 Course Access
+- View assigned courses/modules/chapters
+- Access downloadable resources and videos
+
+#### 3.3.3 Practice & Submission
+- Attempt quizzes and assignments
+- Upload files or type responses
+- Receive automatic feedback on quizzes
+- View manual feedback from admins
+
+#### 3.3.4 Progress Tracking
+- See visual performance trends
+- Track completed chapters and time spent
+- Get reminders for pending tasks
+
+#### 3.3.5 Messaging & Support
+- Chat with assigned instructors
+- Participate in course-specific discussion boards
+- Get notified of feedback and announcements
+
+---
+
+## 4. Non-Functional Requirements
+
+### 4.1 Security
+- Secure authentication and session handling
+- Encrypted password storage
+- Validation and sanitization of user inputs
+- File upload restrictions (size, type)
+
+### 4.2 Usability
+- Mobile-responsive interface
+- Easy navigation for both students and admins
+- Use of icons and status indicators for clarity
+
+### 4.3 Performance
+- Optimized SQL queries for fast data retrieval
+- Efficient file storage and media loading
+- Lazy loading for resources (if required)
+
+### 4.4 Scalability
+- Modular codebase for future updates (e.g., API support)
+- Ability to handle growing number of users and courses
+- Configurable limits for uploads and records
+
+### 4.5 Maintainability
+- Clean, well-documented PHP code
+- Use of reusable components (header, footer, etc.)
+- Separation of concerns (DB logic, UI, auth, etc.)
+
+### 4.6 Reliability
+- Regular backups of the database
+- Error logging and graceful error handling
+- User session timeout handling
+
+---
+
+## 5. Constraints
+- Development will use only Core PHP (no frameworks)
+- Hosting will be on a shared or VPS environment
+- Limited to PHP 8.x and MySQL 5.7/8.0
+
+---
+
+## 6. Assumptions
+- All users will access the platform via modern web browsers
+- Admins are moderately tech-savvy
+- Students have access to internet and basic digital literacy
+
