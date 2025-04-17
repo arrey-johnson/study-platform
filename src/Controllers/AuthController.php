@@ -25,6 +25,9 @@ class AuthController extends Controller
      */
     public function processLogin()
     {
+        // Debug information
+        error_log("processLogin method called");
+        
         if (!$this->isPost()) {
             $this->redirect('/auth/login');
         }
@@ -46,8 +49,8 @@ class AuthController extends Controller
 
         // Get user from database
         $user = $this->db->fetch(
-            "SELECT * FROM users WHERE email = ?",
-            [$email]
+            "SELECT * FROM users WHERE email = ? OR username = ?",
+            [$email, $email]
         );
 
         // Verify user exists and password is correct
@@ -58,16 +61,26 @@ class AuthController extends Controller
 
         // Set session variables
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['name'] = $user['name'];
+        $_SESSION['name'] = $user['first_name'] . ' ' . $user['last_name'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
 
         // Redirect to appropriate dashboard
         if ($user['role'] === 'admin') {
             $this->redirect('/admin/dashboard');
+        } elseif ($user['role'] === 'teacher') {
+            $this->redirect('/teacher/dashboard');
         } else {
             $this->redirect('/student/dashboard');
         }
+    }
+    
+    /**
+     * Process login form - hyphenated URL version
+     */
+    public function processHyphenLogin()
+    {
+        return $this->processLogin();
     }
 
     /**
@@ -78,4 +91,4 @@ class AuthController extends Controller
         session_destroy();
         $this->redirect('/auth/login');
     }
-} 
+}

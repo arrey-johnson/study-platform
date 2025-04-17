@@ -13,12 +13,13 @@
                         <?php unset($_SESSION['flash_message'], $_SESSION['flash_type']); ?>
                     <?php endif; ?>
 
-                    <form action="<?= APP_URL ?>/auth/processLogin" method="POST">
+                    <!-- Fixed form action URL -->
+                    <form action="<?= APP_URL ?>/auth/process-login" method="POST">
                         <input type="hidden" name="<?= CSRF_TOKEN_NAME ?>" value="<?= csrf_token() ?>">
                         
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="username" class="form-label">Username or Email</label>
+                            <input type="text" class="form-control" id="username" name="email" required>
                         </div>
                         
                         <div class="mb-3">
@@ -34,4 +35,4 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
